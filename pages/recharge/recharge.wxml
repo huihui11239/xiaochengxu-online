@@ -1,0 +1,81 @@
+<!--logs.wxml-->
+<view class='rech-wrapper'>
+<!-- header -->
+  <view class="rech-header">
+    <!-- <image src='../../images/my-headerBg.jpg' class='rech-headerImg'></image> -->
+    <view class='rech-nameWrap'>
+      <view class='top-con'>
+        <view class='balcnce-txt'>我的金币：</view>
+        <view class='balance-con'><view class='balance-num'>{{balance}} </view><view>币</view></view>
+      </view>
+      <!-- 波浪背景 -->
+      <view class='rech-headerBottomBg'><image src='https://images.hbwlife.com/staticImg/my-wave.jpg'></image></view>
+    </view>
+  </view>
+  <!-- ul li -->
+  <view class="sel-wrap">
+    <view class="user-info">
+      <text>账户：</text>
+      <text wx:if="{{nickName}}">{{nickName}}</text>
+      <text class="noNickNameTxt" wx:if="{{nickName==''}}">只有注册登录后才能充值哦~</text>
+      <button class='getUserInfo animated up' wx:if="{{nickName==''}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">注册登录</button>
+    </view>
+    <view class="ul">
+      <block wx:for="{{rechargeMoneyArr}}" wx:key="id" wx:for-index="i">
+        <view class="li {{currentItem==item.id?'active-tag':''}}" bindtap='selMoney' data-realmoney="{{item.rmb}}" data-id="{{item.id}}">
+            <view class="show-bi">{{item.show}}</view>
+            <view class="show-money">￥{{item.rmb}}</view>
+        </view>
+      </block>
+    </view>
+</view>
+<!-- 代付码 -->
+<view class="help-wrap">
+  <!-- <label>邦邦码 : </label> -->
+  <image class="bangMaImg" src="https://images.hbwlife.com/staticImg/bbm.png"></image>
+  <form wx-if="{{switchChecked}}">
+    <view class='ipt_box'>
+    <!-- 这里设置disabled避免直接在input中输入值 -->
+      <input 
+      type='number' wx:for="{{inputLen}}" wx:key="{{index}}" 
+      disabled bindtap='onFocus'
+      value="{{iptValue.length>=index+1?iptValue[index]:''}}"
+      />
+    </view>
+    <!-- 其实我们是在下面这个输入框输入值，上面onFocus事件，改变isFocus，使其可以聚焦到下面密码框中 -->
+     <input type='number' class='hidden_ipt' maxlength="{{inputLen}}" focus="{{isFocus}}" bindinput="setValue"></input>
+     <!-- <input name="password" password="{{true}}" class='hidden_ipt' maxlength="{{inputLen}}" focus="{{isFocus}}" bindinput="setValue"></input> -->
+ </form>
+  <!-- <view class="help-code" wx-if="{{!switchChecked}}">
+    <input class="bbm bbm1" type="number"></input>
+    <input class="bbm bbm2" type="number"></input>
+    <input class="bbm bbm3" type="number"></input>
+    <input class="bbm bbm4" type="number"></input>
+    <input class="bbm bbm5" type="number"></input>
+    <input class="bbm bbm6" type="number"></input>
+  </view> -->
+  <switch type="switch" checked="{{switchChecked}}" style='zoom:.6;' bindchange="listenerSwitch"/>
+  
+</view>
+<!-- 文字说明 -->
+<view class="explain">
+  <text class="txt">说明：</text>
+  <!-- <text class="desc">1、充值后在APP、小程序中都可以使用，余额通用。目前，暂不支持发票申请。</text> -->
+  <text class="desc">1、充值后没有使用期限。目前暂不支持提现、退款、发票申请。</text>
+  <text class="desc">2、如遇到无法充值、充值失败等情况，请提交意见反馈至hbwisdom@hbgk.net邮箱。</text>
+  <text class="desc">3、请在网络条件好的情况下充值，耐心等待充值结果，不要关闭等待页面。</text>
+</view>
+ <!-- btn -->
+ <view class='wrap-btn'>
+  <button class='recharge-btn' bindtap='pay' wx-if="{{showPaybtn}}">立即充值</button>
+ </view>
+ <!--点击完授权按钮，新人送金币弹窗 -->
+   <view class="register-dialog" bindtap="showRegDialog" wx:if="{{showRegDialog}}">
+    <image src="https://images.hbwlife.com/staticImg/register-dialog.png"></image>
+   </view>
+ 
+
+
+
+
+</view>

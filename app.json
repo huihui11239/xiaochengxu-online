@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/courseList/courseList",
+    "pages/courseDetail/courseDetail",
+    "pages/expertList/expertList",
+    "pages/my/my",
+    "pages/collectCourse/collectCourse",
+    "pages/collectExpert/collectExpert",
+    "pages/collectSpecial/collectSpecial",
+    "pages/submitOrder/submitOrder",
+    "pages/submitOrderIos/submitOrderIos",
+    "pages/recharge/recharge",
+    "pages/dialog/dialog",
+    "pages/payedCourseList/payedCourseList",
+    "pages/payedSpecial/payedSpecial",
+    "pages/check/check",
+    "pages/agreement/agreement",
+    "pages/disclaimer/disclaimer",
+    "pages/help/help",
+    "pages/feedBackExpert/feedBackExpert",
+    "pages/feedBackCourse/feedBackCourse",
+    "pages/feedBackHb/feedBackHb",
+    "pages/activity/activity",
+    "pages/willLive/willLive",
+    "pages/integral/integral",
+    "pages/integralShop/integralShop",
+    "pages/waterMark/waterMark"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#07c160",
+    "navigationBarTitleText": "汉邦智慧生活",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#07c160"
+  },
+  "tabBar": {
+    "color": "#676a6d",
+    "selectedColor": "#3e894c",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./images/home1.png",
+        "selectedIconPath": "./images/home2.png"
+      },
+      {
+        "pagePath": "pages/expertList/expertList",
+        "text": "专家列表",
+        "iconPath": "./images/expertList1.png",
+        "selectedIconPath": "./images/expertList2.png"
+      },
+      {
+        "pagePath": "pages/courseList/courseList",
+        "text": "视频列表",
+        "iconPath": "./images/courseList1.png",
+        "selectedIconPath": "./images/courseList2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./images/my1.png",
+        "selectedIconPath": "./images/my2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,327 @@
+page{
+background-color: #f7fafa;
+overflow-y: scroll;
+}
+.rech-wrapper{
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.rech-header{
+  width: 100%;
+  height: 170rpx;
+  overflow: hidden;
+  position: relative;
+  
+}
+.rech-headerImg{
+  display: block;
+  width: 100%;
+  height: 350rpx;
+  overflow: hidden;
+  margin-top:-62rpx;
+
+}
+.rech-nameWrap{
+  width:100%;
+  height:100%;
+  padding-bottom:30rpx;
+  background-color:#fff;
+  border-radius:15rpx;
+  position:absolute;
+  top:0;
+  /* box-shadow:0 0rpx 10rpx 0rpx #07c160;
+  -webkit-box-shadow:0px 0px 10rpx 0rpx #07c160; */
+
+}
+.top-con{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0);
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  color:#676a6d;
+  z-index:999;
+  
+}
+.rech-nameWrap .balcnce-txt{
+  font-size: 32rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  padding-left: 10rpx;
+}
+.rech-nameWrap .balance-con{
+  font-size: 40rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  display: flex;
+  padding-left: 10rpx;
+}
+.balance-num{
+ /* color: red; */
+ margin-right: 10rpx;
+}
+/* 波浪图 */
+.rech-headerBottomBg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 132rpx;
+  overflow: hidden;
+  z-index: 5;
+}
+.rech-headerBottomBg image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* ul il */
+.sel-wrap{
+    width:100%;
+    height:auto;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.user-info{
+    color: #676a6d;
+    height:100rpx;
+    line-height: 100rpx;
+    font-size: 35rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.user-info .noNickNameTxt{
+    color: #a3a5a7;
+    font-size: 28rpx;
+    
+}
+.getUserInfo{
+  position: absolute;
+  right: 0;
+  top:10rpx;
+  width:auto;
+  padding: 0 20rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background: linear-gradient(to right, #9ACD32 , #07c160);
+  box-shadow: 0 0 20rpx  #72af8f;
+}
+.animated {
+      animation-duration: 3s; /*动画时间*/
+      animation-fill-mode: both; /*播放后的状态*/
+  }
+
+  .animated {
+      animation-iteration-count: infinite; /*动作循环的次数：infinite 无限循环*/
+  }
+
+  .animated {
+      animation-duration: 3s; /*动画时间*/
+  }
+  .up{
+      animation-name:upAnimation; /*动画的名称*/
+      transform-origin: center bottom; /*设置动画旋转元素的基点为*/
+      cursor: pointer;
+  }
+  @keyframes upAnimation{
+      0%,
+      100%,
+      20%,
+      50%,
+      80% {
+          transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+          transform: translate3d(0,0,0);
+      }
+      40%,
+      43%{
+          transition-timing-function: cubic-bezier(0.755,0.50,0.855,0.060);
+          transform: translate3d(0,-10px,0);
+      }
+      70%{
+          transition-timing-function: cubic-bezier(0.755,0.050,0.855,0.060);
+          transform: translate3d(0,-15px,0);
+      }
+      90%{
+          transform: translate3d(0,-4px,0);
+      }
+  }
+.sel-wrap .ul{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.sel-wrap .ul .li{
+    width:30%;
+    height:160rpx;
+    box-shadow:1rpx 1rpx 9rpx #73dba5;
+    border-radius: 15rpx;
+    margin-bottom: 40rpx;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+/* 选中充值的金额，样式 */
+.active-tag{
+  background: #99d8b6;
+  box-shadow:5rpx 5rpx 15rpx #e2f467;
+}
+.sel-wrap .show-bi{
+  color: #da6f37;
+  font-size: 33rpx;
+  margin-bottom: 10rpx;
+}
+.sel-wrap .show-money{
+  color: #333;
+  font-size: 33rpx;
+}
+/* 代付码 */
+.help-wrap{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  padding: 0 30rpx;
+  position: relative;
+}
+
+.bangMaImg{
+  width:160rpx;
+  height: 50rpx;
+  
+}
+form{
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.ipt_box{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input{
+  height: 60rpx;
+  width:auto;
+  border:1px solid #cdcdcd;
+  border-radius: 8rpx;
+  display: inline-block;
+  line-height: 94px;
+  text-align: center;
+  font-size: 48rpx;
+  color:#323232;
+  margin:0 5rpx;
+}
+form .hidden_ipt{
+  height: 0rpx;
+  width:0rpx;
+  border:none;
+  margin:0;
+}
+switch{
+  margin-left: 20rpx;
+}
+/* .help-wrap .help-code{
+  width:60%;
+  border-radius: 8rpx;
+  padding-left: 15rpx;
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.help-wrap .bbm-box{
+   width:60%;
+   height:100%;
+  position: absolute;
+  top:0;
+  left:215rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  
+}
+.help-wrap .bbm{
+  width:14%;
+  height:100%;
+  border:1rpx solid #6adbaf;
+} */
+
+/* 文字提示 */
+ .explain{
+    width: 100%;
+    height:auto;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    display: flex;
+    flex-flow: column;
+    margin-top: 40rpx;
+      
+  }
+  .explain view{
+      
+  }
+  .explain .txt{
+    color: #676a6d;
+    font-size: 32rpx;
+  }
+  .explain .desc{
+    width: 100%;
+    color: #676a6d;
+    font-size: 28rpx;
+  }
+/* btn */
+.wrap-btn{
+  position:fixed;
+  bottom:34rpx;
+  width:100%;
+  padding:0 30rpx;
+  height:80rpx;
+  line-height:80rpx;
+  box-sizing:border-box;
+
+}
+.recharge-btn{
+  border-radius: 50rpx;
+  background: #eaf8f8;
+  box-shadow: 1rpx 1rpx 8rpx #6adbaf;
+}
+.recharge-btn::after{ border: none;}
+.recharge-btn:active{
+  background:#6ad39b;
+}
+
+
+/* 点击完授权按钮，新人送金币弹窗 */
+.register-dialog{
+  width: 100%;
+  height: 100%;
+  display: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999
+}
+.register-dialog image{
+  width:100%;
+  height:100%;
+}
+

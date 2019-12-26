@@ -1,0 +1,90 @@
+/* pages/check/check.wxss */
+.indexWrap{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+}
+.index-Text{
+  color: #363636;
+  font-size: 32rpx;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 76rpx;
+}
+.index-TextBottom{
+  color: #07c160;
+  font-size: 38rpx;
+  width: 100%;
+  text-align: center;
+  height: auto;
+  overflow: hidden;
+  margin-top: 29rpx;
+}
+.index-Img{
+  margin: 0 auto;
+  display: block;
+  margin-top: 75rpx;
+}
+.index-btn{
+  width: 630rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  margin-top: 120rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background: linear-gradient(to right, #9ACD32 , #07c160);
+  box-shadow: 0 0 20rpx  #07c160;
+}
+.index-btn:active{
+    outline:none;
+    background:#0ca654;
+    /*执行动画*/
+    -webkit-animation:showBtn 0.5s 1;
+    animation:showBtn 0.5s 1;
+    /*停止在最后一帧*/
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes showBtn{
+    10%{
+        background:-webkit-radial-gradient(Circle,#0ca654 28%, #39c550 30%, #7bca3c 48%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 28%, #39c550 30%, #7bca3c 48%,#9ACD32 60%);
+        }
+    20%{
+        background:-webkit-radial-gradient(Circle,#0ca654 32%, #39c550 34%, #7bca3c 52%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 32%, #39c550 34%, #7bca3c 52%,#9ACD32 60%);
+    }
+    40%{
+        background:-webkit-radial-gradient(Circle,#0ca654 34%, #39c550 36%, #7bca3c 54%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 34%, #39c550 36%, #7bca3c 54%,#9ACD32 60%);
+    }
+    60%{
+        background:-webkit-radial-gradient(Circle,#0ca654 36%, #39c550 38%, #7bca3c 56%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 36%, #39c550 38%, #7bca3c 56%,#9ACD32 60%);
+    }
+    80%{
+        background:-webkit-radial-gradient(Circle,#0ca654 38%, #39c550 40%, #7bca3c 58%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 38%, #39c550 40%, #7bca3c 58%,#9ACD32 60%);
+    }
+    100%{
+        background:-webkit-radial-gradient(Circle,#0ca654 40%, #39c550 42%, #7bca3c 60%,#9ACD32 60%);
+        background:radial-gradient(Circle,#0ca654 40%, #39c550 42%, #7bca3c 60%,#9ACD32 60%);
+    }
+}
+
+
+.noLogin{
+  border: none;
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+
+}

@@ -1,0 +1,55 @@
+.fail{
+  width: 516rpx;
+  height: 600rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -258rpx;
+  top: 200rpx;
+}
+.fail image{
+  display: block;
+  width: 516rpx;
+  height: 448rpx;
+}
+.failBtn{
+  display: block;
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #07c160;
+  color: #fff;
+  font-size: 32rpx;
+  border: none;
+  margin-top: 70rpx;
+  box-shadow: 0 0 10rpx #07c160;
+  border-radius: 20rpx;
+}
+.failPress{
+  position: relative;
+  top: 3rpx;
+  box-shadow:0px 0px 8px #999 inset; 
+}
+.noData{
+  width: 512rpx;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -256rpx;
+  top: 200rpx;
+}
+.noData image{
+  width: 512rpx;
+  height: 466rpx;
+  display: block;
+}
+.noDataTxt{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  font-size: 38rpx;
+  text-align: center;
+  color: #676a6d;
+  margin-top: 30rpx;
+}

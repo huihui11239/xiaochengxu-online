@@ -1,0 +1,129 @@
+<!--logs.wxml-->
+<view class='my-wrapper'>
+  <!-- header -->
+  <view class="my-header">
+    <image src='https://images.hbwlife.com/staticImg/my-headerBg.jpg' class='my-headerImg'></image>
+    <view class='my-nameWrap'>
+          <button class='getUserInfo animated up' wx:if="{{login}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">注册登录</button>
+          <view class='my-icon'>
+            <image src='{{avatar_url}}'></image>
+            <view class='my-name'>{{nickName}}</view>
+          </view>
+        <view class='my-headerBottom'>
+         <view class='my-headerItem' bindtap='goRecharge'>
+            <view>{{balance}}</view>
+            <view>我的金币</view>
+          </view>
+          <view class='my-headerItem' bindtap='goIntegral'>
+            <view>{{integral?integral:0}}</view>
+            <view>我的积分</view>
+          </view>
+        </view>
+        <view class='my-headerBottomBg'><image src='https://images.hbwlife.com/staticImg/my-wave.jpg'></image></view>
+    </view>
+    <!-- 签到有礼 -->
+    <view class='sign-wrap' bindtap='goSign'><image src='https://images.hbwlife.com/staticImg/sign.png'></image></view>
+  </view>
+
+<!-- 我的工具栏 -->
+  <view class='my-classifyWrap'>
+    <view class='my-classifyHeader'>       
+      <text>我的工具栏</text>
+    </view>
+    <!--3个收藏-->
+    <view class='my-orderWrap'>
+      <view class='my-orderContent'>
+        <view url='../newmy/newmy' class='my-orderItem' hover-class='my-hover' bindtap="gocollectCourse">
+          <image src='../../images/courseList2.png'></image>
+          <text>收藏的视频</text>
+        </view>
+        <view url='../newmy/newmy' class='my-orderItem' hover-class='my-hover' bindtap="gocollectExpert">
+          <image src='../../images/my-expert-sel.png'></image>
+          <text>收藏的专家</text>
+        </view>
+        <view url='../newmy/newmy' class='my-orderItem' hover-class='my-hover' bindtap="gocollectSpecial">
+          <image src='../../images/coll-special-icon.png'></image>
+          <text>收藏的专题</text>
+        </view>
+      </view> 
+     </view>
+    <!--下边几个  -->
+    <view class='my-classifyContent'>
+      <view class='my-classifyItem' hover-class='my-hover' bindtap="gopayedCourseList">
+        <view class="item-l">
+          <image src='../../images/my-course-icon.png' class='my-collectImg'></image>
+            <text>我的视频</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </view>
+      <view class='my-classifyItem' hover-class='my-hover' bindtap="gopayedSpecial">
+        <view class="item-l">
+          <image src='../../images/my-special-icon.png' class='my-collectImg'></image>
+            <text>我的专题</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </view>
+
+      <navigator url='' class='my-classifyItem' hover-class='my-hover'  bindtap="goJifenShop">
+        <view class="item-l">
+          <image src='../../images/my-gift.png' class='my-buyImg'></image>
+          <text>积分有礼</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </navigator>
+      <navigator url='../help/help' class='my-classifyItem' hover-class='my-hover'>
+        <view class="item-l">
+          <image src='../../images/help.png' class='my-buyImg'></image>
+          <text>帮助中心</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </navigator>
+      <view class='my-classifyItem' hover-class='my-hover' bindtap="goFeedBackHb">
+        <view class="item-l">
+          <image src='../../images/feedBack-icon.png' class='my-collectImg'></image>
+            <text>意见反馈</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </view>
+      <navigator url='../agreement/agreement' class='my-classifyItem' hover-class='my-hover'>
+        <view class="item-l">
+          <image src='../../images/agreement.png' class='my-buyImg'></image>
+          <text>用户协议</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </navigator>
+      <navigator url='../disclaimer/disclaimer' class='my-classifyItem' hover-class='my-hover'>
+        <view class="item-l">
+          <image src='../../images/disclaimer.png' class='my-buyImg'></image>
+          <text>汉邦声明</text>
+        </view>
+        <image src='../../images/my-right-icon.png' class='my-rightImg'></image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 没有授权的时候弹窗 -->
+  <!--modal  -->
+  <view  wx:if="{{noLoginShowModal}}">
+      <view class="mask" catchtouchmove="preventTouchMove"></view>
+      <!-- 主体 -->
+      <view class="modalDlg">
+          <text class="modal-txt">为了更好的体验，请先注册登录</text>
+          <view class="btn-wrap">
+            <button class="modalCancel" bindtap="iosCloseDialog">取消</button>
+            <button class='modalGetUserInfo' wx:if="{{login}}" bindtap="" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确定登录</button>
+          </view>
+        <!-- 关闭按钮 -->
+        <view class='closeDialog' bindtap="iosCloseDialog"><image src="https://images.hbwlife.com/staticImg/close.png"></image></view>
+      </view>
+  </view>
+   <!--点击完授权按钮，新人送金币弹窗 -->
+   <view class="register-dialog" bindtap="showRegDialog" wx:if="{{showRegDialog}}">
+    <image src="https://images.hbwlife.com/staticImg/register-dialog.png"></image>
+   </view>
+
+
+
+
+
+
+</view>

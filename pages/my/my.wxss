@@ -1,0 +1,444 @@
+.my-wrapper{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  min-height: 100%;
+}
+.my-header{
+  width: 100%;
+  height: 489rpx;
+  overflow: hidden;
+  position: relative;
+  background-color: #efeff0;
+}
+.my-headerImg{
+  display: block;
+  width: 100%;
+  height: 350rpx;
+  overflow: hidden;
+}
+.my-nameWrap{
+  width:94%;
+  height:360rpx;
+  background-color:#fff;
+  border-radius:15rpx;
+  position:absolute;
+  left: 3%;
+  bottom:20rpx;
+  box-shadow:0 0rpx 10rpx 0rpx #07c160;
+  -webkit-box-shadow:0px 0px 10rpx 0rpx #07c160;
+  min-height:100rpx;
+  display: block;
+
+}
+
+/* @-webkit-keyframes loginBtnJump{
+    10%{
+         transform: rotate(15deg);
+        }
+    20%{
+        transform: rotate(-10deg);
+    }
+    30%{
+       transform: rotate(5deg);
+    }
+    40%{
+         transform: rotate(-5deg);
+    }
+    50%,100% {
+       transform: rotate(0deg);
+    }
+} */
+
+.getUserInfo{
+  width:200rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  margin-top: 30rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background: linear-gradient(to right, #9ACD32 , #07c160);
+  box-shadow: 0 0 20rpx  #07c160;
+  margin: 0 auto;
+
+}
+.animated {
+      animation-duration: 3s; /*动画时间*/
+      animation-fill-mode: both; /*播放后的状态*/
+  }
+
+  .animated {
+      animation-iteration-count: infinite; /*动作循环的次数：infinite 无限循环*/
+  }
+
+  .animated {
+      animation-duration: 3s; /*动画时间*/
+  }
+  .up{
+      animation-name:upAnimation; /*动画的名称*/
+      transform-origin: center bottom; /*设置动画旋转元素的基点为*/
+      cursor: pointer;
+  }
+  @keyframes upAnimation{
+      0%,
+      100%,
+      20%,
+      50%,
+      80% {
+          transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+          transform: translate3d(0,0,0);
+      }
+      40%,
+      43%{
+          transition-timing-function: cubic-bezier(0.755,0.50,0.855,0.060);
+          transform: translate3d(0,-30px,0);
+      }
+      70%{
+          transition-timing-function: cubic-bezier(0.755,0.050,0.855,0.060);
+          transform: translate3d(0,-15px,0);
+      }
+      90%{
+          transform: translate3d(0,-4px,0);
+      }
+  }
+/* 我的金币、积分 */
+.my-icon{
+  width: 60%;
+  height: 300rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -108rpx;
+  /* position: absolute;
+  left:50%;
+  top: -108rpx;
+  margin-left: -88rpx; */
+}
+.my-icon image{
+  width: 176rpx;
+  height: 176rpx;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  
+}
+.my-name{
+  color: #07c160;
+  font-size: 20px;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+.my-headerBottom{
+  position: absolute;
+  bottom:30rpx;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 10;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+
+}
+.my-headerItem{
+  width: 20%;
+  height: auto;
+  overflow: hidden;
+  float: left;
+  text-align: center;
+  color: #07c160;
+}
+.my-headerItem view:first-of-type{
+  font-size: 38rpx;
+}
+.my-headerItem view:nth-of-type(2){
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 13rpx;
+}
+.my-headerBottomBg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 132rpx;
+  overflow: hidden;
+  z-index: 5;
+}
+.my-headerBottomBg image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.my-loginBtn{
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #07c160;
+  color: #fff;
+  font-size: 32rpx;
+  z-index: 999;
+  position:absolute;
+  top: 40rpx;
+  left: 50%;
+  margin-left: -100rpx;
+}
+/* 签到有礼 */
+.sign-wrap{
+  position:absolute;
+  top:41%;
+  right:0;
+  width:161rpx;
+  height:80rpx;
+}
+.sign-wrap image{
+  width:100%;
+  height:100%;
+}
+
+/* 订单 */
+.my-orderWrap{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: rgb(249, 253, 253);
+  box-sizing: border-box;
+  /* padding-left: 31rpx;
+  padding-right: 31rpx;
+  padding-top: 28rpx; */
+  border-bottom: 1px solid #f1f2f3;
+
+}
+.my-orderHeader{
+  width: 100%;
+  height: 51rpx;
+  border-bottom:1px solid #d2d2d2;
+  line-height: 51rpx;
+  padding-bottom: 20rpx;
+}
+.my-orderTitle{
+  font-size: 34rpx;
+}
+.my-orderAll{
+  float: right;
+  font-size: 28rpx;
+  position: relative;
+  z-index: 999;
+}
+.my-orderContent{
+  width: 100%;
+  height: 138rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.my-orderItem{
+  width: auto;
+  height: 100%;
+  float: left;
+  text-align: center;
+  margin: 0 5%;
+  display: flex;
+justify-content: center;
+align-items: center;
+flex-flow: column;
+}
+.my-orderItem:active{
+   background: #e2e4e5;
+ }
+.my-orderItem image{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+
+}
+.my-orderItem text{
+  text-align: center;
+  font-size: 28rpx;
+}
+/* 分类 */
+.my-classifyWrap{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 31rpx;
+}
+.my-classifyHeader{
+  padding-bottom: 31rpx;
+  box-sizing: border-box;
+  border-bottom:1px solid #f1f2f3;
+  font-size: 32rpx;
+}
+.my-classifyContent{
+  width: 100%;
+  height: auto;
+  overflow: hodden;
+}
+.my-classifyItem{
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10rpx;
+  
+  }
+  .my-classifyItem:active{
+   background: #e2e4e5;
+ }
+.my-classifyItem .item-l{
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.my-collectImg{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  float: left;
+  margin-top: 2rpx;
+}
+.my-fapiaoImg{
+  width: 36rpx;
+  height: 42rpx;
+  display: block;
+  float: left;
+  margin-top: 0rpx;
+}
+.my-buyImg{
+  width: 44rpx;
+  height: 44rpx;
+  display: block;
+  float: left;
+}
+.my-classifyItem text{
+  margin-left: 14rpx;
+  font-size: 30rpx;
+}
+.my-rightImg{
+  width: 23rpx;
+height: 23rpx;
+float: right;
+display: block;
+margin-top: 10rpx;
+
+}
+.my-hover{
+  background: #fff;
+}
+
+
+ /* 没有授权的时候弹窗  */
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #4c4c4c;
+  z-index: 9000;
+  opacity: 0.5;
+
+}
+ 
+.modalDlg{
+  width:70%;
+  height:300rpx;
+  z-index:9999;
+  position:fixed;
+  top:50%;
+  left:15%;
+  margin-top: -200rpx;
+  background-color:#fff;
+  border-radius:36rpx 36rpx 0 0;
+  display:flex;
+  
+  flex-direction:column;
+  align-items:center;
+}
+.modalDlg .modal-txt{
+  text-align: center;
+  width:100%;
+  height:200rpx;
+  line-height: 200rpx;
+  font-size: 33rpx;
+}
+
+.btn-wrap{
+  width:100%;
+  height:100rpx;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1rpx solid #c2c2c2; */
+  
+}
+.btn-wrap .modalCancel{
+  margin: 0;
+padding: 0;
+border: 1px solid transparent;  
+outline: none;    
+  width:100%;
+  height:100%;
+   line-height: 100rpx;
+  border-right:1rpx solid #e2e2e2;
+   font-size: 33rpx;
+}
+.btn-wrap .modalGetUserInfo{
+  margin: 0;
+padding: 0;
+border: 1px solid transparent;  
+outline: none;    
+   width: 100%;
+   height: 100%;
+  line-height: 100rpx;
+  font-size: 33rpx;
+  color: #07c160;
+  
+}
+
+/* close */
+.closeDialog{
+  position: fixed;
+  bottom: 150rpx;
+  left:50%;
+  margin-left: -30rpx;
+  width:60rpx;
+  height:60rpx;
+}
+.closeDialog image{
+  width:60rpx;
+  height:60rpx;
+}
+/* 点击完授权按钮，弹窗  */
+.register-dialog{
+  width: 100%;
+  height: 100%;
+  display: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999
+}
+.register-dialog image{
+  width:100%;
+  height:100%;
+}

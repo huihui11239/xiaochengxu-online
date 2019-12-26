@@ -1,0 +1,15 @@
+<!-- 没有授权的时候弹窗 -->
+  <!--modal  -->
+  <view  wx:if="{{noLoginShowModal}}">
+      <view class="mask" catchtouchmove="preventTouchMove"></view>
+      <!-- 主体 -->
+      <view class="modalDlg">
+          <text class="modal-txt">为了更好的体验，请先注册登录</text>
+          <view class="btn-wrap">
+            <button class="modalCancel">取消</button>
+            <button class='modalGetUserInfo' wx:if="{{login}}" bindtap="" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确定登录</button>
+          </view>
+        <!-- 关闭按钮 -->
+        <view class='closeDialog' bindtap="iosCloseDialog"><image src="https://images.hbwlife.com/staticImg/close.png"></image></view>
+      </view>
+  </view>

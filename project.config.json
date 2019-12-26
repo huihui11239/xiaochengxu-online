@@ -1,0 +1,277 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.2",
+	"appid": "wx301d7f04210baab5",
+	"projectname": "live-iosPay",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": 0,
+					"name": "专家详情",
+					"pathName": "pages/expertDetail/expertDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "专家的课程",
+					"pathName": "pages/expertCourse/expertCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "专家列表",
+					"pathName": "pages/expertList/expertList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "课程详情",
+					"pathName": "pages/courseDetail/courseDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "收藏",
+					"pathName": "pages/collection/collection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "课程列表",
+					"pathName": "pages/courseList/courseList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vip",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "充值",
+					"pathName": "pages/recharge/recharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专家列表",
+					"pathName": "pages/expertList/expertList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "check",
+					"pathName": "pages/check/check",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "web",
+					"pathName": "pages/webview/webview",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "专家课程",
+					"pathName": "pages/expertCourse/expertCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "提交订单，安卓",
+					"pathName": "pages/submitOrder/submitOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "弹窗组件",
+					"pathName": "pages/dialog/dialog",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "player",
+					"pathName": "pages/player/player",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提交订单ios",
+					"pathName": "pages/submitOrderIos/submitOrderIos",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "input",
+					"pathName": "pages/input/input",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "vip",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户协议",
+					"pathName": "pages/agreement/agreement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "免责声明",
+					"pathName": "pages/disclaimer/disclaimer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "will",
+					"pathName": "pages/willLive/willLive",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "play",
+					"pathName": "pages/play/play",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "player",
+					"pathName": "pages/player/player",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/player/player",
+					"pathName": "pages/player/player",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/feedBackCourse/feedBackCourse",
+					"pathName": "pages/feedBackCourse/feedBackCourse",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,40 @@
+/* pages/agreement/agreement.wxss */
+page{
+padding: 20rpx 30rpx;
+box-sizing: border-box;
+}
+.agree-wrap{
+  width:100%;
+  height:auto;
+  color: #676a6d;
+}
+.agree-wrap .title{
+  display: block;
+  text-align: center;
+  font-size: 36rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  color: #000;
+
+}
+
+.item{
+
+}
+.item .itemTitle{
+display: block;
+text-align: left;
+font-size: 30rpx;
+height:auto;
+line-height: 50rpx;
+color: rgb(39, 37, 37);
+ text-indent:2em;
+}
+.item .note{
+display: block;
+text-align: left;
+font-size: 30rpx;
+height:auto;
+line-height: 50rpx;
+ text-indent:2em;
+}

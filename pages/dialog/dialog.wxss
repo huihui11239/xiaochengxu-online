@@ -1,0 +1,74 @@
+.mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #4c4c4c;
+  z-index: 9000;
+}
+ 
+.modalDlg{
+  width:580rpx;
+height:765rpx;
+z-index:9999;
+position:fixed;
+top:50%;
+left:50%;
+margin-left: -290rpx;
+margin-top: -450rpx;
+/* top:50%;
+left:0;
+margin:-370rpx 85rpx; */
+background-color:#fff;
+border-radius:36rpx;
+display:flex;
+flex-direction:column;
+align-items:center;
+
+
+}
+.modalDlg .modal-bg{
+  width:100%;
+  height:364rpx;
+}
+.modalDlg .goal{
+  color: #ff3d4f;
+  font-weight: bold;
+  height:60rpx;
+  line-height: 60rpx;
+}
+
+.modalDlg .mid-pic{
+  width: 120rpx;
+  height:120rpx;
+  margin: 10rpx 0;
+}
+.modalDlg .mid-tips{
+  height:90rpx;
+  line-height: 90rpx;
+}
+.btn{
+  width:90%;
+  height:80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  border-radius: 50rpx;
+  background: #ffd022;
+  color: #893913;
+  font-size: 30rpx;
+  text-align: center;
+}
+/* close */
+.closeDialog{
+  position: fixed;
+  bottom: 150rpx;
+  left:50%;
+  margin-left: -30rpx;
+  width:60rpx;
+  height:60rpx;
+}
+.closeDialog image{
+  width:60rpx;
+  height:60rpx;
+}

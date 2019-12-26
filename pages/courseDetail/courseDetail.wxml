@@ -1,0 +1,140 @@
+<!--top-->
+<view class="cd-container">
+    <view class='cd-wrap' wx:if = "{{videoSrc}}" style='width:{{wW}};height:{{wH}}' >
+    <!-- <view class='cd-wrap' style='width:{{wW}};height:{{wH}};' > -->
+      <live-player id="player" src="{{videoSrc}}" mode="live" autoplay="{{true}}" bindfullscreenchange="fullScreen" bindstatechange="statechange"  binderror="error" orientation="{{orientation}}">
+        <!--蒙层  -->
+        <cover-view class='cd-liveModal' bindtap='cdPause'></cover-view>
+        <!-- 播放、暂停按钮 -->
+        <cover-view class='cd-playBg' catchtap='cdPause' style='display:{{playDisplay}};width:{{lW}};height:{{lH}};{{orientation=="vertical"?"position: absolute;left: 50%;margin-left: -30rpx;top: 50%;margin-top: -30rpx;":"position:absolute;left: 0;top:0rpx;"}}'>
+          <!-- play -->
+          <cover-image src='{{cdPlayImg}}' class='cd-play' catchtap="bindPlay" id='cdPlayImg' wx:if='{{flag}}' style='{{orientation=="vertical"?"":"width: 50rpx;height: 50rpx;position:absolute;left: 50%;margin-left: -25rpx;top: 50%;margin-top: -25rpx;"}}'></cover-image>
+          <!-- pause -->
+          <cover-image src='{{cdPauseImg}}' class='cd-pause' catchtap="bindPause" id='cdPauseImg' wx:else style='{{orientation=="vertical"?"":"width: 50rpx;height: 50rpx;position:absolute;left: 50%;margin-left: -25rpx;top: 50%;margin-top: -25rpx;"}}'></cover-image>
+        </cover-view>
+        <!-- 全屏 -->
+        <cover-view class='cd-fullWrap' style='{{orientation=="vertical"?"right: 40rpx":"left: 40rpx"}}' catchtap="bindFull">
+          <!-- <cover-image src='https://images.hbwlife.com/staticImg/cd-full.png' class='cd-full' ></cover-image> -->
+          <cover-image src='{{fullImg}}' class='cd-full' ></cover-image>
+        </cover-view>
+         <!-- 直播中 -->
+        <!-- <cover-view class='cd-fullWrap' style='{{orientation=="vertical"?"right: 40rpx":"left: 40rpx"}}' catchtap="bindFull">
+          <cover-image src='https://images.hbwlife.com/staticImg/cd-full.png' class='cd-full' ></cover-image>
+        </cover-view> -->
+      </live-player>
+    </view>  
+    <!-- 没有获取到src时，显示课程图片 -->
+    <view class='noSrc' wx:if="{{videoSrc==''}}">
+      <image src='{{showCourseData.logo_url_750}}'></image>
+      <!-- 倒计时 -->
+      <view class="daojishi-wrap" wx:if="{{showDaojishi}}">
+        <view class="daojishi-domal"></view>
+        <view class="daojishi-con">
+          <view class="daojishi-txt">即将播放</view>
+          <view class="daojishi-count">{{daojishiCount}}</view>
+          <view class="min">秒</view>
+        </view>
+      </view>
+    </view>
+   <!-- 播放时间 -->
+    <view class='cd-liveWrap'>
+      <!-- <view class='price-tips'>
+         <span class='tips'>{{oderStateTips}}</span>
+      </view> -->
+      <view class='courseName-tips'>
+         <view class='copyright' bindtap="goWaterMark">
+         该视频由汉邦数字水印技术进行版权保护！
+         <image class="faq-icon" src="../../images/faq.png"></image>
+         </view>
+         <view class="name-wrap">
+            <view class="name-l"> <view class='courseName'>{{courseName?courseName:"视频的名称"}}</view></view>
+            <view class="name-r">
+              <button class="share" open-type="share">分享</button>
+              <image class="share-icon" src="../../images/share-icon.png"></image>
+            </view>
+         </view>
+      </view>
+      <view class='play-time'>
+        <view class='cd-liveTxt'>播出时间</view>
+        <view class='cd-liveTime'>{{liveTime?liveTime:"暂未有播出计划！"}}</view>
+      </view>
+      <view class='play-time'>
+        <view class='cd-liveTxt'>时长</view>
+        <view class='cd-liveTime'>{{duration?duration:"0"}}</view>
+      </view>
+    </view>
+     <!-- 重播计划 -->
+    <view class='cd-liveWrap' style='height:{{restartHeight}};'>
+      <view class='cd-liveTxtR' id='cd-liveTxt'>重播时间</view>
+      <view class='cd-arrowWrap' data-id='{{dataId}}' bindtap='changeRestartHeight'>
+        <image src='../../images/arrow-down.png' class='cd-arrowDown'></image>
+      </view>
+      <view wx:if="{{showPaln==false}}" class='cd-noPlan'>暂未有播出计划，敬请期待！</view>
+      <view class='cd-liveTimeR' id='cd-liveTime' wx:else>
+        <view class='cd-liveView'  wx:for="{{restartPlan}}" wx:key="{{index}}"><view class='cd-liveItem'>{{item.show_time}}</view>
+      </view>
+      </view>
+    </view>
+  </view>
+
+ <!-- tab切换 -->
+<view class='cd-liveTab'>
+  <view class='cd-tabHeader'>
+    <view  class="{{tab==0?'cd-tabItem cd-tabHover':'cd-tabItem'}}" bindtap='cdTabHeader' data-item='0'>专家介绍</view>
+    <view class="{{tab==1?'cd-tabItem cd-tabHover':'cd-tabItem'}}" bindtap='cdTabHeader' data-item='1'>内容介绍</view>
+  </view>
+  <view class='cd-tabLine' style='transform:{{tabLine}}'></view>
+  <view class='cd-tabContent' id='cd-tabContent' style='transform:{{tabContent}}; height:{{tabHeight}}px' >
+  <!-- 专家介绍 -->
+    <view class='cd-tabExpirse' id='cd-tabExpirse'>
+      <view class="cd-tabExpertItem">
+            <view class="cd-tabExpressImg"><image src='{{showExpertData.avatar_url? showExpertData.avatar_url : "../../images/defaultImg.png"}}'/></view>
+            <view class="cd-tabExpressTxt">
+              <view class="cd-tabExpressName">{{showExpertData.name}}</view>
+              <view class="cd-tabExpressExplain">{{showExpertData.desc}}</view>
+            </view>
+       </view>
+    </view>
+  <!-- 课程介绍 -->
+    <view class='cd-tabCourse' id='cd-tabCourse'>
+        <view class='courseName'>{{showCourseData.name}}</view>
+        <view class='courseDesc'>{{showCourseData.desc}}</view>
+    </view>
+  </view>
+</view>
+<!-- 支付按钮 -->
+<!-- <view class='paywrap' style='display:{{payDisplay}}'> -->
+<view class='paywrap' style='display:{{payDisplay}}'>   
+  <view class='show-money1'>币 <view class='showDiscounted'>{{price_discounted}}</view></view>
+  <view class='show-money2'>币 <view class='showCoursePrice'>{{coursePrice}}</view></view>
+  <view class='payBtn' bindtap='goSubmitOrder'>我想看</view>
+</view>
+<!-- 没有登录，弹窗显示 -->
+<!-- <loginDialog id="loginDialog" wx:if="{{noLoginShowModal}}"></loginDialog> -->
+
+<!-- 没有授权的时候弹窗 -->
+  <!--modal  -->
+  <view  wx:if="{{noLoginShowModal}}">
+      <view class="mask" catchtouchmove="preventTouchMove"></view>
+      <!-- 主体 -->
+      <view class="modalDlg">
+          <text class="modal-txt">为了更好的体验，请先注册登录</text>
+          <view class="btn-wrap">
+            <button class="modalCancel" bindtap="iosCloseDialog">取消</button>
+            <button class='modalGetUserInfo' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确定登录</button>
+          </view>
+        <!-- 关闭按钮 -->
+        <view class='closeDialog' bindtap="iosCloseDialog"><image src="https://images.hbwlife.com/staticImg/close.png"></image></view>
+      </view>
+  </view>
+<!--点击完授权按钮，新人送金币弹窗 -->
+<view class="register-dialog" bindtap="showRegDialog" wx:if="{{showRegDialog}}">
+  <image src="https://images.hbwlife.com/staticImg/register-dialog.png"></image>
+</view>
+  <!-- 课程留言 -->
+<view class="message" bindtap="goFeedBackCourse">
+  <image class="message-icon" src="https://images.hbwlife.com/staticImg/message-icon.png"></image>
+  <view class="txt">课程留言</view>
+</view>
+
+ 

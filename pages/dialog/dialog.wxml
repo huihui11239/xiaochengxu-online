@@ -1,0 +1,18 @@
+<!-- <button bindtap="submit">点我弹窗</button> -->
+ <!--modal  -->
+ <view  wx:if="{{showModal}}">
+    <view class="mask" catchtouchmove="preventTouchMove"></view>
+    <!-- 主体 -->
+    <view class="modalDlg">
+      <image class='modal-bg' src="https://images.hbwlife.com/staticImg/jiangli.jpg"></image>
+      <text class="goal">获得5金币奖励</text>
+      <image class="mid-pic" src="../../images/vip33.png"></image>
+      <text class="mid-tips">100金币抵1元</text>
+      <text class="btn" bindtap="closeDialog">我知道了</text>
+      <!-- 关闭按钮 -->
+      <view class='closeDialog' bindtap="closeDialog"><image src="https://images.hbwlife.com/staticImg/close.png"></image></view>
+    </view>
+ </view>
+
+ 
+

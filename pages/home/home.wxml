@@ -1,0 +1,87 @@
+<view class="home-wrap">  
+  <!-----------------banner--------------->
+  <swiper class = "banner" 
+    indicator-dots="{{indicatorDots}}" 
+    current="{{current}}" 
+    circular="{{circular}}" 
+    indicator-active-color="{{indicatorActiveColor}}" 
+    indicator-color="{{indicatorColor}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}" >  
+    <!-- 有数据 -->
+    <block wx:for="{{bannerImgs}}" wx:key="id">
+      <swiper-item bindtap="swiperClick">  
+        <image src="{{item}}" model="aspectFit" data-id="{{index}}" />
+        <!-- <image src="https://images.hbwlife.com/staticImg/banner-active.jpg" model="aspectFit" data-id="{{index}}" /> -->
+        <!-- <view class='course-name'>{{}}</view> -->
+      </swiper-item>  
+    </block> 
+    <!-- 无数据，显示宣传图 -->
+    <!-- <block wx:for="{{banners}}" wx:key="id" wx:if="{{haveWillShow==false}}">
+      <swiper-item>  
+        <image src="{{item.img}}" model="aspectFit" data-id="{{index}}" />
+        <view class='course-name'>{{item.name}}</view>
+      </swiper-item>  
+    </block>  -->
+  </swiper>
+  <!------------------ 正在播放 --------------->
+  <view class='curLive' wx:if="{{curWrapShow==true}}">
+    <text class='title'>正在播放</text>
+    <image class='curIcon' src='https://images.hbwlife.com/staticImg/icon1.png'></image>
+    <view class='curWrap'>
+      <swiper 
+        display-multiple-items="{{curImgUrls.length > 3 ? 2.5 : 1}}">
+        <block wx:for="{{curImgUrls}}"  class='box' wx:key='{{item.course_id}}'>             
+          <swiper-item bindtap="curGoCourse" data-courseId="{{item.course_id}}" data-showTime="{{item.show_time}}" data-expertId="{{item.course.expert_id}}" data-price="{{item.course.price_once}}" next-margin="20rpx">		
+            <view class='curImg'>
+              <image src="{{curImgUrls.length > 3 ? item.course.logo_url_300:item.course.logo_url_750}}"></image>
+              <view class="liveing-icon-wrap">
+                <view class="liveing-txt">播放中</view>
+                <image src="https://images.hbwlife.com/staticImg/liveing-icon.gif"></image>
+              </view>
+            </view>												
+            <view class="courseName">{{item.course.name}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+   <!-- <view class='noCurrent' wx:if="{{curWrapShow==false}}">暂无播放,请查看下边播放列表！</view> -->
+  </view>
+  <!-- 即将播放 -->
+  <view class='historyLive'>
+    <text class='title'>即将播放</text>
+    <image class="hisIcon" src='https://images.hbwlife.com/staticImg/icon2.png'></image>
+    <view class="willMore-btn" bindtap="goWillLiveMore">查看全部 ></view>
+    <view class='hisWrap' wx:if="{{haveWillShow==true&&index<10}}" wx:for="{{willshowData}}" wx:key="{{item.course_id}}" data-index="{{index}}">
+      <block>
+        <view class='hisItem' bindtap="hisGoCourse" data-courseId="{{item.course_id}}" data-expertId="{{item.expert_id}}" data-price="{{item.price_once}}"  data-showTime="{{item.shows[0]}}">  
+          <image src="{{item.logo_url_300?item.logo_url_300:'https://images.hbwlife.com/staticImg/defaultImg.png'}}" data-id="{{item.course_id}}" data-expertId="{{item.expert_id}}" /> 
+          <view class='wrap-r'>
+            <text class="course-name">{{item.name}}</text>
+            <view class="home-time">
+              <text class='timeLi' wx:if="{{index <= 2}}"  wx:for="{{item.shows}}" wx:key="{{item.course_id}}">{{item}}</text>
+            </view>
+            <view class='home-desc'>{{item.desc}}</view>
+          </view> 
+          <!-- 倒计时 -->
+          <view class="daojishi-wrap" wx:if="{{index==0 && showDaojishi}}">
+              <view class="daojishi-domal"></view>
+              <view class="daojishi-con">
+                <view class="daojishi-txt">即将播放</view>
+                <view class="daojishi-count">{{daojishiCount}}</view>
+                <view class="min">秒</view>
+              </view>
+            </view>
+          </view>  
+          <!-- 已购买，角标 -->
+          <image class="payed-txt" wx:if="{{item.consumed}}" src="https://images.hbwlife.com/staticImg/payed.png"></image>
+    </block> 
+    </view>
+     <!-- 查看全部 -->
+      <view class="willMore-bottom" wx:if="{{willDataAllShow}}" bindtap="goWillLiveMore">查看全部</view>
+    <!-- 暂无数据 -->
+    <!-- <view class='noCurrent' wx:if="{{haveWillShow==false}}">暂无播放！</view>
+    <view class="bottom-tips" wx:if="{{reachBottom}}">~我也是有底线的~</view> -->
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<template name="common">
+<view class='noData'>
+  <image src='../../images/noData.png'/>
+  <view class='noDataTxt'>暂无数据</view>
+</view>
+</template>

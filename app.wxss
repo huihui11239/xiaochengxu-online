@@ -1,0 +1,13 @@
+
+button{
+margin: 0;
+padding: 0;
+border: 1px solid transparent;  
+outline: none;    
+}
+button::after {
+  border: none;
+}
+page{
+  font-family: "Microsoft YaHei","Arial";
+}
